@@ -3,10 +3,9 @@ name: DEV Workflow Test
 on:
   push:
     branches:
-      - release_bank_dev
+      - Release_bank_dev
 
-permissions:
-  contents: read
+  workflow_dispatch:
 
 jobs:
   workflow-test:
@@ -16,9 +15,9 @@ jobs:
     steps:
       - name: Display workflow message
         run: |
-          echo "=========================================="
-          echo "My DEV workflow has started to execute."
+          echo "======================================"
+          echo "My DEV workflow has started to execute"
           echo "Branch: $GITHUB_REF_NAME"
           echo "Triggered by: $GITHUB_ACTOR"
           echo "Commit ID: $GITHUB_SHA"
-          echo "=========================================="
+          echo "======================================"
