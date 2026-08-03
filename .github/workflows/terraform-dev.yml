@@ -1,0 +1,23 @@
+name: DEV Workflow Test
+
+on:
+  push:
+    branches:
+      - Release_bank_dev
+
+  workflow_dispatch:
+
+jobs:
+  workflow-test:
+    name: Start DEV Workflow
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display workflow message
+        run: |
+          echo "======================================"
+          echo "My DEV workflow has started to execute"
+          echo "Branch: $GITHUB_REF_NAME"
+          echo "Triggered by: $GITHUB_ACTOR"
+          echo "Commit ID: $GITHUB_SHA"
+          echo "======================================"
